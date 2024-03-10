@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Background color */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Make sure content is centered vertically on the viewport */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            width: 300px; /* Adjust form width as needed */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <form method="post" action="/profile">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ profile_data[2] }}" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ profile_data[3] }}" required>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="{{ profile_data[4] }}" required>
+        <button type="submit">Update Profile</button>
+    </form>
+</body>
+</html>
